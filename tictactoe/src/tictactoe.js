@@ -1,6 +1,6 @@
 import React from 'react'
 import Board from'./Board'
-class Game extends React.Component {
+class Tictactoe extends React.Component {
     render() {
         return (
             <div className="game">
@@ -11,8 +11,9 @@ class Game extends React.Component {
                     <div></div>
                     <ol></ol>
                 </div>
-
             </div>
             )
     }
 }
+
+export default Tictactoe
