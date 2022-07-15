@@ -14,7 +14,7 @@ body {
   }
   
   .status {
-    margin-bottom: 10px;
+    margin-bottom: 100px;
     font-size: 1.8em;
   }
   
@@ -25,12 +25,12 @@ body {
     font-size: 24px;
     font-weight: bold;
     line-height: 34px;
-    height: 80px;
+    height: 110px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
     text-align: center;
-    width: 80px;
+    width: 110px;
   }
   
   .square:focus {
@@ -45,8 +45,22 @@ body {
     display: flex;
     flex-direction: row;
   }
+
+  .game-board {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 100px auto;
+  }
   
   .game-info {
     margin-left: 20px;
   }
   
+
+  .c1 {
+    color: red;
+  }
+
+  .c2 {
+    color: blue;
+  }
