@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Tictactoe from './Tictactoe'
 import './index.css'
 ReactDOM.render (
-  <Tictactoe/>,
+  <Tictactoe />,
   document.getElementById('root')
 )
 

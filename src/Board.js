@@ -31,8 +31,8 @@ class Board extends React.Component {
     render() {
         const winner = calculateWinner(this.state.squares);
         let status;
-        let col
         let icon = this.state.xIsNext ? 'X' : 'O'
+        let col
 
         if (icon === 'O') {
             col = 'red'
