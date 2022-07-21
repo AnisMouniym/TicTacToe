@@ -1,5 +1,6 @@
 import React from 'react'
 import Square from './Square'
+let playCount = 0
 class Board extends React.Component {
     constructor(props) {
         super(props);
@@ -16,7 +17,7 @@ class Board extends React.Component {
         }
         squares[i] = this.state.xIsNext ? 'X' : 'O'
         this.setState({ squares: squares, xIsNext: !this.state.xIsNext})
-    
+        playCount++
     }
 
     renderSquare(i) {
@@ -30,15 +31,31 @@ class Board extends React.Component {
     render() {
         const winner = calculateWinner(this.state.squares);
         let status;
-        if (winner) {
-            status = 'The winner is: ' + winner;
+        let col
+        let icon = this.state.xIsNext ? 'X' : 'O'
+
+        if (icon === 'O') {
+            col = 'red'
         } else {
-            status = 'Next player : ' + (this.state.xIsNext ? 'X' : 'O');
+            col = 'blue'
         }
+
+        if (winner) {
+            status = 'THE WINNER IS: '
+            icon = winner
+        } else if (playCount === 9) {
+            status = "IT'S A DRAW !"
+            icon = ''
+        }
+        else {
+            status = 'Next player : ';
+        }
+
         return (
             <div>
                 <div className="status">{status}</div>
-                <div className="board-row">
+                <span className="icon" style={{color: col}}>{icon}</span>
+                <div className="board-row" id='top'>
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}
                     {this.renderSquare(2)}
