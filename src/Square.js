@@ -9,7 +9,9 @@ function Square(props) {
       col = 'blue'
   }
     return (
-      <button className="square" onClick={props.onClick} style={{color: col}} >
+      <button className="square" 
+      onClick={props.onClick} 
+      style={{color: col}} >
         {props.value}
       </button>
     );

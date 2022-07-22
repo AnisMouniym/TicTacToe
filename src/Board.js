@@ -10,6 +10,8 @@ class Board extends React.Component {
         }
     }
 
+// *******************HANDLECLICK*********************
+
     handleClick(i) {
         const squares = this.state.squares.slice()
         if (calculateWinner(squares) || squares[i]) {
@@ -34,11 +36,14 @@ class Board extends React.Component {
         let icon = this.state.xIsNext ? 'X' : 'O'
         let col
 
+// *******************ICON COLORS*********************
         if (icon === 'O') {
             col = 'red'
         } else {
             col = 'blue'
         }
+
+// *******************WINNER STATUS*********************
 
         if (winner) {
             status = 'THE WINNER IS: '
@@ -54,26 +59,35 @@ class Board extends React.Component {
         return (
             <div>
                 <div className="status">{status}</div>
-                <span className="icon" style={{color: col}}>{icon}</span>
+                <span className="icon" 
+                style={{color: col}}>
+                    {icon}
+                </span>
+
                 <div className="board-row" id='top'>
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}
                     {this.renderSquare(2)}
                 </div>
+
                 <div className="board-row">
                     {this.renderSquare(3)}
                     {this.renderSquare(4)}
                     {this.renderSquare(5)}
                 </div>
+
                 <div className="board-row">
                     {this.renderSquare(6)}
                     {this.renderSquare(7)}
                     {this.renderSquare(8)}
                 </div>
+
             </div>
             )
     }
 }
+
+// *******************CALCULATE WINNER*********************
 
 function calculateWinner(squares) {
     const lines = [
