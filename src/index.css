@@ -71,10 +71,18 @@ body {
   }
   
 
-  .c1 {
-    color: red;
+  #reload {
+    display: flex;
+    margin: 10px auto;
+    width: 30%;
+    background-color: aliceblue;
+    padding: 10px;
+    border: 1px solid black;
+    justify-content: center;
   }
 
-  .c2 {
-    color: blue;
+  #reload:active {
+    background-color: rgb(193, 202, 209);
   }
+
+  

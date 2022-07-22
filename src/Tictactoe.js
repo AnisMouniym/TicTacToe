@@ -7,6 +7,7 @@ class Tictactoe extends React.Component {
                 <div className="game-board">
                     <Board />
                 </div>
+                <div className="rejouer" onClick={<Board/>}>Rejouer</div>
                 <div className="game-info">
                     <div></div>
                     <ol></ol>

@@ -82,10 +82,16 @@ class Board extends React.Component {
                     {this.renderSquare(8)}
                 </div>
 
+                <div>
+                    <button id='reload' onClick={refreshPage}>RELOAD</button>
+                </div>
+
             </div>
             )
     }
 }
+
+
 
 // *******************CALCULATE WINNER*********************
 
@@ -109,4 +115,10 @@ function calculateWinner(squares) {
     }
     return null;
   }
+
+
+function refreshPage() {
+    window.location.reload(false);
+}
+
 export default Board
