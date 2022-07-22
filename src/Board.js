@@ -34,33 +34,27 @@ class Board extends React.Component {
         const winner = calculateWinner(this.state.squares);
         let status;
         let icon = this.state.xIsNext ? 'X' : 'O'
-        let col
+        iconColor()
 
-// *******************ICON COLORS*********************
-        if (icon === 'O') {
-            col = 'red'
-        } else {
-            col = 'blue'
-        }
-
-// *******************WINNER STATUS*********************
-
-        if (winner) {
-            status = 'THE WINNER IS: '
-            icon = winner
-        } else if (playCount === 9) {
-            status = "IT'S A DRAW !"
-            icon = ''
-        }
-        else {
-            status = 'Next player : ';
-        }
-
+// *******************WINNER STATUS***********************
+                                                        //
+        if (winner) {                                   //
+            status = 'THE WINNER IS: '                  //
+            icon = winner                               //
+            iconColor()                                 //
+        } else if (playCount === 9) {                   //
+            status = "IT'S A DRAW !"                    //
+            icon = ''                                   //
+        }                                               //
+        else {                                          //
+            status = 'Next player : ';                  //
+        }                                               //
+// *******************************************************
         return (
             <div>
                 <div className="status">{status}</div>
                 <span className="icon" 
-                style={{color: col}}>
+                style={{color: iconColor(icon)}}>
                     {icon}
                 </span>
 
@@ -92,6 +86,14 @@ class Board extends React.Component {
 }
 
 
+// *******************ICON COLOR*********************
+function iconColor(icon) {
+    if (icon === 'O') {
+        return 'red'
+    } else {
+        return 'blue'
+    }
+}
 
 // *******************CALCULATE WINNER*********************
 
@@ -116,6 +118,7 @@ function calculateWinner(squares) {
     return null;
   }
 
+// *******************REFRESH PAGE*********************
 
 function refreshPage() {
     window.location.reload(false);
