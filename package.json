@@ -2,6 +2,7 @@
   "name": "tictactoe",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "homepage": "https://anismouniym.github.io/TicTacToe",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -41,4 +42,5 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   }
+  
 }
